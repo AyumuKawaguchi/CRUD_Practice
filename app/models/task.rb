@@ -5,6 +5,10 @@ class Task < ApplicationRecord
   validates :name, presence: true
   validate  :validate_name_not_including_comma
 
+  belongs_to :user
+
+  scope :recent, -> { order(created_at: :desc) }
+  # SQLを利用した絞り込みなどの条件を多用する場合にはscopeメソッドが使える。条件を変数に入れれば使える。今回はrecentという変数にorderを使った形
 
   private
 
