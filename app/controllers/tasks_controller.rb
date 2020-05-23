@@ -11,6 +11,7 @@ class TasksController < ApplicationController
   end
 
   def show
+    
     # @task = Task.find(params[:id]) #これだとたまたま適当にURLを/tasks/32のように打ってしまったら、特定ユーザー出なくてもアクセスできてしまう。
     # @task = current_user.tasks.find(params[:id]) before_actionでリファクタリングしているけど、一応わかりやすくするのに残しとく
   end
